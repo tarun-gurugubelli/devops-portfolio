@@ -36,7 +36,7 @@ export default function LandingPage() {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meet the Engineer</h2>
             <p className="text-lg text-muted-foreground">
-              Hi, I'm <span className="wiggle">Tarun Gurugubelli</span>, a DevOps engineer with over 3 years of experience, and I absolutely love bridging the gap between development and operations. My passion lies in automating tasks, optimizing systems, and making deployments smoother and faster. I enjoy collaborating with teams to create efficient workflows and innovative solutions. Let's explore the exciting world of DevOps together!
+              Hi, I'm <span className="wiggle">Tarun Gurugubelli</span>, a DevOps engineer with over 4+ years of experience, and I absolutely love bridging the gap between development and operations. My passion lies in automating tasks, optimizing systems, and making deployments smoother and faster. I enjoy collaborating with teams to create efficient workflows and innovative solutions. Let's explore the exciting world of DevOps together!
             </p>
             <div className="flex gap-4">
               <Button variant="outline" size="icon" asChild>
@@ -60,7 +60,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="relative aspect-square">
-            <Image src="/devops-guide/data/tarun.jpg" alt="Developer" fill className="object-cover rounded-lg" priority />
+            <Image src="/data/tarun.jpg" alt="Developer" fill className="object-cover rounded-lg" priority />
           </div>
         </div>
       </section>

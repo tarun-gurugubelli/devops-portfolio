@@ -22,8 +22,8 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
   output:'export',
-  basePath: '/devops-guide', // Replace with your repository name
-  assetPrefix: '/devops-guide/', // Replace with your repository name
+  // basePath: '/devops-guide', // Replace with your repository name
+  // assetPrefix: '/devops-guide/', // Replace with your repository name
 }
 
 mergeConfig(nextConfig, userConfig)
