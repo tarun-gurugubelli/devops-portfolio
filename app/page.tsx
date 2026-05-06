@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Github, Linkedin, Twitter } from "lucide-react"
+import { ArrowRight, BriefcaseBusiness, Code2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import PipelineAnimation from "@/components/pipeline-animation"
 
@@ -41,19 +41,19 @@ export default function LandingPage() {
             <div className="flex gap-4">
               <Button variant="outline" size="icon" asChild>
                 <Link href="https://github.com/tarun-gurugubelli">
-                  <Github className="h-4 w-4" />
+                  <Code2 className="h-4 w-4" />
                   <span className="sr-only">GitHub</span>
                 </Link>
               </Button>
               {/* <Button variant="outline" size="icon" asChild>
                 <Link href="https://twitter.com">
-                  <Twitter className="h-4 w-4" />
+                  <Code2 className="h-4 w-4" />
                   <span className="sr-only">Twitter</span>
                 </Link>
               </Button> */}
               <Button variant="outline" size="icon" asChild>
                 <Link href="https://www.linkedin.com/in/tarun-gurugubelli/">
-                  <Linkedin className="h-4 w-4" />
+                  <BriefcaseBusiness className="h-4 w-4" />
                   <span className="sr-only">LinkedIn</span>
                 </Link>
               </Button>
@@ -98,4 +98,3 @@ export default function LandingPage() {
     </main>
   )
 }
-

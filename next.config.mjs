@@ -7,9 +7,6 @@ try {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -22,8 +19,6 @@ const nextConfig = {
     parallelServerCompiles: true,
   },
   output:'export',
-  // basePath: '/devops-guide', // Replace with your repository name
-  // assetPrefix: '/devops-guide/', // Replace with your repository name
 }
 
 mergeConfig(nextConfig, userConfig)

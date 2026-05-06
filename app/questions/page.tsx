@@ -20,7 +20,7 @@ export default function QuestionsPage() {
 
   useEffect(() => {
     const fetchQuestions = async () => {
-      const res = await fetch(`/devops-guide/data/questionsv2.json`);
+      const res = await fetch(`/data/questionsv2.json`);
       const data = await res.json();
       setQuestions(data.questions);
       setIsMounted(true); // Set mounted state to true after fetching

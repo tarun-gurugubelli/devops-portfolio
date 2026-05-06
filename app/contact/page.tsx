@@ -4,11 +4,11 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { BriefcaseBusiness, Code2, Mail } from "lucide-react";
 import Link from "next/link";
 
 export default function ContactPage() {
@@ -27,20 +27,14 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const response = await fetch('/api/sendEmail', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    });
-
-    if (response.ok) {
-      alert('Message sent successfully!');
-      setFormData({ name: '', email: '', subject: '', message: '' }); // Reset form
-    } else {
-      alert('Failed to send message.');
-    }
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      "",
+      formData.message,
+    ].join("\n");
+    const subject = encodeURIComponent(formData.subject || "DevOps Knowledge Board contact");
+    window.location.href = `mailto:tarungurugubelli@outlook.com?subject=${subject}&body=${encodeURIComponent(body)}`;
   };
 
   return (
@@ -91,20 +85,20 @@ export default function ContactPage() {
               <div className="grid gap-4">
                 <div className="flex items-center gap-4">
                   <Mail className="w-5 h-5" />
-                  <Link href="mailto:support@example.com" className="text-primary hover:underline">
+                  <Link href="mailto:tarungurugubelli@outlook.com" className="text-primary hover:underline">
                     tarungurugubelli@outlook.com
                   </Link>
                 </div>
                 <div className="flex gap-4">
                   <Button variant="outline" size="icon" asChild>
                     <Link href="https://github.com/tarun-gurugubelli">
-                      <Github className="w-4 h-4" />
+                      <Code2 className="w-4 h-4" />
                       <span className="sr-only">GitHub</span>
                     </Link>
                   </Button>
                   <Button variant="outline" size="icon" asChild>
                     <Link href="https://www.linkedin.com/in/tarun-gurugubelli/">
-                      <Linkedin className="w-4 h-4" />
+                      <BriefcaseBusiness className="w-4 h-4" />
                       <span className="sr-only">LinkedIn</span>
                     </Link>
                   </Button>
