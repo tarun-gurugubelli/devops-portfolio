@@ -1,0 +1,43 @@
+<main class="container mx-auto px-4 py-8">
+  <h1 class="text-4xl font-bold tracking-tight mb-8">Frequently Asked Questions</h1>
+
+  <div class="space-y-8">
+    @for (category of questions(); track category.category) {
+      <div>
+        <h2
+          [id]="category.category.toLowerCase()"
+          class="text-2xl font-semibold mb-4 transition-colors"
+          [class.text-blue-500]="activeCategory() === category.category.toLowerCase()"
+        >
+          {{ category.category }} Questions
+        </h2>
+
+        <div class="w-full border rounded-md divide-y divide-border">
+          @for (item of category.items; track item.question; let i = $index) {
+            <div class="px-4">
+              <button
+                class="flex w-full items-center justify-between py-4 text-left text-sm font-medium transition-all hover:underline"
+                (click)="toggleItem(category.category + '-' + i)"
+              >
+                <span>{{ item.question }}</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 shrink-0 ml-2 transition-transform duration-200"
+                  [class.rotate-180]="isOpen(category.category + '-' + i)"
+                  fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
+              @if (isOpen(category.category + '-' + i)) {
+                <div class="pb-4 pt-0 text-sm text-muted-foreground">
+                  {{ item.answer }}
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</main>

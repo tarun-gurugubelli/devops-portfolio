@@ -1,0 +1,61 @@
+<header class="border-b">
+  <div class="container mx-auto px-4 h-14 flex items-center justify-between">
+    <!-- Logo -->
+    <a routerLink="/" class="flex items-baseline">
+      <span class="font-semibold text-lg">DevOps</span>
+      <span class="text-xs font-light ml-1">by Tarun Gurugubelli</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex gap-6">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="text-primary"
+          class="text-sm font-medium hover:text-primary transition-colors"
+        >{{ link.label }}</a>
+      }
+    </nav>
+
+    <!-- Mobile Hamburger -->
+    <button
+      class="md:hidden inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-muted transition-colors"
+      (click)="toggleMenu()"
+      aria-label="Toggle menu"
+    >
+      @if (mobileMenuOpen()) {
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      } @else {
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      }
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav Overlay -->
+@if (mobileMenuOpen()) {
+  <div class="sheet-overlay md:hidden" (click)="closeMenu()"></div>
+  <div class="sheet-content md:hidden">
+    <div class="flex items-center justify-between mb-6">
+      <span class="font-semibold text-lg">DevOps</span>
+      <button (click)="closeMenu()" class="p-1 rounded hover:bg-muted">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col gap-4">
+      @for (link of navLinks; track link.path) {
+        <a
+          [routerLink]="link.path"
+          class="text-sm font-medium hover:text-primary transition-colors"
+          (click)="closeMenu()"
+        >{{ link.label }}</a>
+      }
+    </nav>
+  </div>
+}
