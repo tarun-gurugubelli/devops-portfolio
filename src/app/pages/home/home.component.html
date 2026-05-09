@@ -1,0 +1,107 @@
+<main class="min-h-screen">
+  <!-- Hero Section -->
+  <section class="relative h-[90vh] flex items-center justify-center bg-muted/50">
+    <div class="container px-4 py-8 flex flex-col items-center text-center">
+      <h1 class="text-4xl md:text-6xl font-bold tracking-tighter mb-6 animate-slide-top">
+        Welcome to DevOps QNA Knowledge Board
+      </h1>
+      <p class="text-xl text-muted-foreground max-w-[600px] mb-8 animate-slide-bottom delay-200">
+        Explore our comprehensive collection of DevOps tools, featuring insightful questions and detailed answers.
+        Whether you're a beginner or an expert, find the resources you need to enhance your DevOps journey!
+      </p>
+      <a
+        routerLink="/modules"
+        class="animate-slide-bottom delay-300 inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-6 py-3 text-sm font-medium shadow hover:bg-primary/90 transition-colors"
+      >
+        Explore Now
+        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
+
+      <!-- Pipeline Animation -->
+      <div class="w-full mt-16 animate-slide-bottom delay-500">
+        <app-pipeline-animation></app-pipeline-animation>
+      </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent"></div>
+  </section>
+
+  <!-- Developer Introduction -->
+  <section class="container px-4 py-16 md:py-24">
+    <div class="grid gap-12 md:grid-cols-2 items-center">
+      <div class="space-y-6">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Meet the Engineer</h2>
+        <p class="text-lg text-muted-foreground">
+          Hi, I'm <span class="wiggle">Tarun Gurugubelli</span>, a DevOps engineer with over 4+ years of experience,
+          and I absolutely love bridging the gap between development and operations. My passion lies in automating tasks,
+          optimizing systems, and making deployments smoother and faster. I enjoy collaborating with teams to create
+          efficient workflows and innovative solutions. Let's explore the exciting world of DevOps together!
+        </p>
+        <div class="flex gap-4">
+          <a
+            href="https://github.com/tarun-gurugubelli"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center rounded-md border border-input bg-background p-2 shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+            aria-label="GitHub"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/tarun-gurugubelli/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center rounded-md border border-input bg-background p-2 shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+            aria-label="LinkedIn"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="7" width="4" height="15"></rect><circle cx="4" cy="4" r="2"></circle>
+              <path d="M9 7h4v2.5S14 7 17 7c3 0 5 1.5 5 6v8h-4v-8c0-1.5-.5-2.5-2-2.5S14 11.5 14 13v8h-4V7z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="relative aspect-square">
+        <img src="/data/tarun.jpg" alt="Tarun Gurugubelli" class="object-cover rounded-lg w-full h-full" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About the Platform -->
+  <section class="bg-muted/50 py-16 md:py-24">
+    <div class="container px-4">
+      <div class="max-w-2xl mx-auto text-center space-y-8">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl">About DevOps Knowledge Board</h2>
+        <p class="text-lg text-muted-foreground">
+          DevOps Knowledge Board is more than just a Q&amp;A platform. It's a carefully curated knowledge base designed to help
+          developers at all stages of their journey. From basic concepts to advanced implementations, find answers
+          to your programming questions and level up your development skills.
+        </p>
+        <div class="grid gap-8 md:grid-cols-3 text-center">
+          <div class="space-y-2">
+            <h3 class="text-2xl font-bold">200+</h3>
+            <p class="text-muted-foreground">Curated Answers</p>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-2xl font-bold">10+</h3>
+            <p class="text-muted-foreground">Topics Covered</p>
+          </div>
+          <div class="space-y-2">
+            <h3 class="text-2xl font-bold">24/7</h3>
+            <p class="text-muted-foreground">Resource Access</p>
+          </div>
+        </div>
+        <a
+          routerLink="/modules"
+          class="inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-6 py-3 text-sm font-medium shadow hover:bg-primary/90 transition-colors"
+        >
+          Start Learning
+        </a>
+      </div>
+    </div>
+  </section>
+</main>

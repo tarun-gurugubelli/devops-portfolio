@@ -1,0 +1,68 @@
+<div class="w-full max-w-3xl mx-auto my-8 px-4">
+  <div class="relative">
+    <!-- Conveyor Belt -->
+    <div class="absolute top-1/2 left-0 w-full h-2 bg-muted -translate-y-1/2">
+      <div class="absolute top-1/2 left-0 w-full h-0.5 bg-primary/50"></div>
+    </div>
+
+    <!-- Stages -->
+    <div class="relative grid grid-cols-5 gap-4">
+      @for (stage of stages; track stage.label; let i = $index) {
+        <div class="flex flex-col items-center gap-2">
+          <div
+            class="relative z-10 size-16 rounded-full border-2 flex items-center justify-center bg-background transition-colors duration-500"
+            [class.border-primary]="activeStage() === i"
+            [class.text-primary]="activeStage() === i"
+            [class.border-muted-foreground]="activeStage() !== i"
+            [class.opacity-30]="activeStage() !== i && false"
+          >
+            <!-- Develop -->
+            @if (stage.icon === 'code') {
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            }
+            <!-- Scan -->
+            @if (stage.icon === 'search') {
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            }
+            <!-- Build -->
+            @if (stage.icon === 'package') {
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <line x1="16.5" y1="9.4" x2="7.5" y2="4.21"></line><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+            }
+            <!-- Store -->
+            @if (stage.icon === 'box') {
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              </svg>
+            }
+            <!-- Deploy -->
+            @if (stage.icon === 'cloud') {
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+              </svg>
+            }
+
+            <!-- Active indicator dot -->
+            <div
+              class="absolute -bottom-2 left-1/2 size-4 rounded-full bg-primary transition-opacity duration-500"
+              style="transform: translateX(-50%) rotate(45deg)"
+              [class.opacity-100]="activeStage() === i"
+              [class.opacity-0]="activeStage() !== i"
+            ></div>
+          </div>
+
+          <span
+            class="text-sm font-medium transition-colors duration-500"
+            [class.text-primary]="activeStage() === i"
+            [class.text-muted-foreground]="activeStage() !== i"
+          >{{ stage.label }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</div>

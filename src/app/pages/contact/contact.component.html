@@ -1,0 +1,113 @@
+<main class="container mx-auto px-4 py-8">
+  <div class="max-w-2xl mx-auto">
+    <h1 class="text-4xl font-bold tracking-tight mb-4">Contact Us</h1>
+    <p class="text-lg text-muted-foreground mb-8">
+      Have a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+    </p>
+
+    <div class="grid gap-8">
+      <!-- Contact Form Card -->
+      <div class="rounded-lg border bg-card shadow-sm">
+        <div class="p-6 pb-3">
+          <h2 class="text-xl font-semibold">Send us a message</h2>
+          <p class="text-sm text-muted-foreground mt-1">Fill out the form below and we'll get back to you within 24 hours.</p>
+        </div>
+        <div class="p-6 pt-0">
+          <form class="grid gap-4" (submit)="handleSubmit($event)">
+            <div class="grid gap-2">
+              <label for="name" class="text-sm font-medium">Name</label>
+              <input
+                id="name" name="name" type="text"
+                placeholder="Enter your name"
+                [value]="formData().name"
+                (input)="updateField('name', $any($event.target).value)"
+                class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              />
+            </div>
+            <div class="grid gap-2">
+              <label for="email" class="text-sm font-medium">Email</label>
+              <input
+                id="email" name="email" type="email"
+                placeholder="Enter your email"
+                [value]="formData().email"
+                (input)="updateField('email', $any($event.target).value)"
+                class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              />
+            </div>
+            <div class="grid gap-2">
+              <label for="subject" class="text-sm font-medium">Subject</label>
+              <input
+                id="subject" name="subject" type="text"
+                placeholder="Enter the subject"
+                [value]="formData().subject"
+                (input)="updateField('subject', $any($event.target).value)"
+                class="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+              />
+            </div>
+            <div class="grid gap-2">
+              <label for="message" class="text-sm font-medium">Message</label>
+              <textarea
+                id="message" name="message"
+                placeholder="Enter your message"
+                [value]="formData().message"
+                (input)="updateField('message', $any($event.target).value)"
+                rows="6"
+                class="flex w-full rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring resize-none"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="w-full inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground px-4 py-2 text-sm font-medium shadow hover:bg-primary/90 transition-colors"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Connect Card -->
+      <div class="rounded-lg border bg-card shadow-sm">
+        <div class="p-6 pb-3">
+          <h2 class="text-xl font-semibold">Connect with us</h2>
+          <p class="text-sm text-muted-foreground mt-1">Follow us on social media or reach out through other channels.</p>
+        </div>
+        <div class="p-6 pt-0 grid gap-4">
+          <div class="flex items-center gap-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <a href="mailto:tarungurugubelli@outlook.com" class="text-primary hover:underline text-sm">
+              tarungurugubelli&#64;outlook.com
+            </a>
+          </div>
+          <div class="flex gap-4">
+            <a
+              href="https://github.com/tarun-gurugubelli"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-md border border-input bg-background p-2 shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+              aria-label="GitHub"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/tarun-gurugubelli/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center rounded-md border border-input bg-background p-2 shadow-sm hover:bg-accent hover:text-accent-foreground transition-colors"
+              aria-label="LinkedIn"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="4" height="15"></rect><circle cx="4" cy="4" r="2"></circle>
+                <path d="M9 7h4v2.5S14 7 17 7c3 0 5 1.5 5 6v8h-4v-8c0-1.5-.5-2.5-2-2.5S14 11.5 14 13v8h-4V7z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
